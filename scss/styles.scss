@@ -3,6 +3,8 @@
 @import 'mixins.scss';
 @import 'normalize';
 
+$brand-color: #ea355a;
+
 * {
 	box-sizing: border-box;
 }
@@ -10,10 +12,102 @@
 html {
 	font: 10px/1.6 'Open Sans', serif;
 	height: 100%;
+	background: linear-gradient(30deg, #ff512f, #dd2476);
 }
 
 body {
-	font-size: 1.6rem;
-	color: #333;
+	font-size: 1.3rem;
+	color: #7a7b7f;
 	min-height: 100%;
+}
+
+.form {
+	max-width: 450px;
+	width: 98%;
+	min-height: 470px;
+	background-color: #fff;
+	@include posCenter();
+	&__head, &__body, &__footer {
+		padding: 30px;
+	}
+	&__head {
+		padding-bottom: 15px;
+	}
+	&__title {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	&__name {
+		margin: 0;
+		padding: 10px;
+		font-size: 2.4rem;
+		overflow: hidden;
+	}
+	&__logo {
+		padding: 10px 0;
+	}
+	img {
+		width: 28px;
+		height: 28px;
+	}
+	&__text {
+		padding-top: 10px;
+		&--footer {
+			font-size: 1.2rem;
+		}
+	}
+	&__link {
+		text-decoration: none;
+		color: $brand-color;
+		border-bottom: 1px solid transparent;
+		@include hover {
+			border-color: $brand-color;
+		}
+	}
+	&__body {
+		padding: 10px 30px;
+	}
+	&__group {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		padding: 8px;
+	}
+	&__field {
+		font-size: 1.4rem;
+		padding: 15px;
+		width: 100%;
+		background-color: #f0f0f0;
+		border: 1px solid transparent;
+		outline: none;
+		@include hover {
+			border-color: $brand-color;
+		}
+		&--md {
+			width: calc(50% - 8px);
+		}
+	}
+	&__btn {
+		width: 100%;
+		padding: 20px;
+		margin-top: 10px;
+		background-color: $brand-color;
+		border-color: 2px solid $brand-color;
+		color: #fff;
+		font-weight: bold;
+		font-size: 1.8rem;
+		border-radius: 5px;
+		@include hover {
+			cursor: pointer;
+			background-color: #fff;
+			color: $brand-color;
+			border-color: $brand-color;
+		}
+	}
+	&__footer {
+		padding-top: 0;
+	}
+
 }
